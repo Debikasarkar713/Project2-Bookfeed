@@ -13,7 +13,9 @@
     <input type="submit" value="Go">
   </form>
   <% books.forEach((book) => {%>
-    <p><%= book.volumeInfo.authors %></p>
+    <p><%= book.volumeInfo.title %></p>
+        <p><img src="<%= book.volumeInfo.imageLinks.thumbnail %><"></p>
+
   <%})%>
 
 </body>
