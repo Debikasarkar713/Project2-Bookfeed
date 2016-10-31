@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="/normalize.css">
+  <link rel="stylesheet" href="/styles.css">
+  </head>
+<body>
+
+<% if (books.items.length) { %>
+   <% books.items.forEach(function(n) { %>
+      <img src='<%= n.volumeInfo.imageLinks.thumbnail  %>'/>
+      <h3><%= n.volumeInfo.title %></h3>
+
+<% }) %>
+<% }; %>
+
+
+</body>
+</html>

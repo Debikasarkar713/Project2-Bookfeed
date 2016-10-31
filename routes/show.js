@@ -1,12 +1,24 @@
-const router = require('express').Router();
+const showRouter = require('express').Router();
 
 const { bookSearch } = require('../service/book');
+const { deleteBooks, saveBooks } = require('../models/favorites');
 
-router.get('/book', bookSearch, (req, res) => {
-  res.json(res.book)
-  // res.render('index', {
-  //   book: res.book,
-  // });
-  console.log(res.book);
+showRouter.get('/', bookSearch, (req, res) => {
+  // console.log(res.book);
+
+  // res.json(res.book);
+  res.render('feed', {
+    books: res.book || [],
+  });
 });
-module.exports = router;
+
+
+showRouter.delete('/favorites/:id', deleteBooks, (req, res) => {
+  res.redirect('/show');
+});
+
+showRouter.post('/favorites', saveBooks, (req, res) => {
+  res.redirect('/show');
+});
+
+module.exports = showRouter;

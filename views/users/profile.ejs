@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <title>This Day in History</title>
+ <link rel="stylesheet" href="css/normalize.css">
+ <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <h1>Welcome! <%= user.username %></h1>
+   <form action="/auth?_method=DELETE" method="post">
+     <input type="submit" value="Logout">
+   </form>
+<div class='search'>
+<p>Enter the date you would like to see news articles for.</p>
+<form action='/firstSearch' method='POST'>
+ <input type='date' name='begin_date' placeholder="enter date in YYYYMMDD format">
+ <input type='submit' value='search'>
+</form>
+</div>
+
+</body>
+</html>
